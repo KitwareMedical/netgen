@@ -485,7 +485,7 @@ if(UNIX)
     set(CPACK_PACKAGE_DESCRIPTION "NETGEN is an automatic 3d tetrahedral mesh generator. It accepts input from constructive solid geometry (CSG) or boundary representation (BRep) from STL file format. The connection to a geometry kernel allows the handling of IGES and STEP files. NETGEN contains modules for mesh optimization and hierarchical mesh refinement. Netgen is open source based on the LGPL license. It is available for Unix/Linux and Windows.")
 
     set(CPACK_PACKAGING_INSTALL_PREFIX "/opt/netgen")
-    execute_process(COMMAND grep CODENAME /etc/lsb-release OUTPUT_VARIABLE temp OUTPUT_STRIP_TRAILING_WHITESPACE)
+    execute_process(COMMAND grep CODENAME /etc/os-release OUTPUT_VARIABLE temp OUTPUT_STRIP_TRAILING_WHITESPACE)
     execute_process(COMMAND dpkg --print-architecture OUTPUT_VARIABLE CPACK_DEBIAN_PACKAGE_ARCHITECTURE OUTPUT_STRIP_TRAILING_WHITESPACE)
     if(temp)
         set(CPACK_GENERATOR "DEB")
