@@ -42,5 +42,7 @@ if(USE_PYTHON)
     target_link_libraries(nglib PRIVATE ${PYTHON_LIBRARIES})
 endif(USE_PYTHON)
 
+target_include_directories(nglib INTERFACE $<INSTALL_INTERFACE:${NG_INSTALL_DIR_INCLUDE}> $<INSTALL_INTERFACE:${NG_INSTALL_DIR_INCLUDE}/include>)
+
 install(TARGETS nglib ${NG_INSTALL_DIR})
 install(FILES nglib.h DESTINATION ${NG_INSTALL_DIR_INCLUDE} COMPONENT netgen_devel)
